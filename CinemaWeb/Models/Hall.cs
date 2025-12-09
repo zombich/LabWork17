@@ -18,4 +18,6 @@ public partial class Hall
     public bool IsVip { get; set; }
 
     public virtual ICollection<Session> Sessions { get; set; } = new List<Session>();
+
+    public string? HallInfo => $"{Cinema} - Зал №{HallNumber}";
 }

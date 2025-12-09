@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CinemaWeb.Models;
 
@@ -12,15 +13,15 @@ public partial class Film
     public short Duration { get; set; }
 
     public short ReleaseYear { get; set; }
-
+    [DataType(DataType.MultilineText)]
     public string? Description { get; set; }
 
     public byte[]? Poster { get; set; }
 
     public string? AgeRating { get; set; }
-
+    [DataType(DataType.Date)]
     public DateOnly? StartDate { get; set; }
-
+    [DataType(DataType.Date)]
     public DateOnly? EndDate { get; set; }
 
     public bool IsDeleted { get; set; }

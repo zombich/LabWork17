@@ -1,0 +1,60 @@
+﻿@page
+@model CinemaWeb.Pages.Sessions.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Создать новое</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Session[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Session[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Session[0].Is3D)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Session[0].Film)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Session[0].Hall)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Session) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Is3D)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hall.HallInfo)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SessionId">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.SessionId">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SessionId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

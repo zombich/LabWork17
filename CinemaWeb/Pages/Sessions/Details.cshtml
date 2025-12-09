@@ -1,0 +1,49 @@
+﻿@page
+@model CinemaWeb.Pages.Sessions.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Session</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Session.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Session.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Session.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Session.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Session.Is3D)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Session.Is3D)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Session.Film)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Session.Film.FilmId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Session.Hall)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Session.Hall.HallId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Session.SessionId">Редактировать</a> |
+    <a asp-page="./Index">Обратно к списку</a>
+</div>

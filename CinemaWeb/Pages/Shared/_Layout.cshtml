@@ -24,10 +24,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Tickets/Index">Tickets</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Tickets/Index">Билеты</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Films/Index">Films</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Films/Index">Фильмы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Visitors/Index">Посетители</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Sessions/Index">Сеансы</a>
                         </li>
                     </ul>
                     @if (Accessor.HttpContext.Session.GetString("Role") is not null)
