@@ -14,6 +14,7 @@ public partial class Session
     public byte HallId { get; set; }
     [Display(Name = "Цена")]
     [DataType(DataType.Currency)]
+    [Required(ErrorMessage = "Поле обязательно для заполнения")]
     public decimal Price { get; set; }
     [Display(Name = "Дата сеанса")]
     [DataType(DataType.DateTime)]
